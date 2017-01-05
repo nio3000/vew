@@ -8,15 +8,15 @@
     "type": "git",
     "url": "git+https://github.com/myst729/vew.git"
   },
-  "main": "entry.js",
+  "main": "main.js",
   "scripts": {
-    "clean": "rimraf bin && rimraf dist",
-    "build": "cross-env NODE_ENV=production webpack",
+    "clean": "rimraf binaries && rimraf dist",
     "watch": "cross-env NODE_ENV=development webpack --watch",
+    "dist": "cross-env NODE_ENV=production webpack",
     "serve": "electron .",
     "pack": "electron-packager ./ 'VEW' --platform=darwin --arch=x64 --out=./binaries --icon=./icon.icns",
     "dev": "npm-run-all clean --parallel watch serve",
-    "dist": "npm-run-all clean build pack"
+    "build": "npm-run-all clean dist pack"
   },
   "keywords": [
     "vue",

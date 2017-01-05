@@ -12,8 +12,8 @@ npm install
 # serve with hot reload
 npm run dev
 
-# build for production with minification
-npm run dist
+# build and pack for production with minification
+npm run build
 ```
 
 
