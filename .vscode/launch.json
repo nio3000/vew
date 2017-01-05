@@ -7,7 +7,7 @@
       "request": "launch",
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-      "program": "${workspaceRoot}/entry.js"
+      "program": "${workspaceRoot}/main.js"
     },
     {
       "name": "Renderer Process",
@@ -15,7 +15,7 @@
       "request": "launch",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
       "runtimeArgs": [
-        "${workspaceRoot}/entry.js",
+        "${workspaceRoot}/main.js",
         "--remote-debugging-port=9222"
       ],
       "webRoot": "${workspaceRoot}"
