@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const projectRoot = path.resolve(__dirname, './')
 
 module.exports = {
-  devtool: process.env.NODE_ENV === 'development' ? '#eval-source-map' : false,
+  devtool: process.env.NODE_ENV === 'development' ? '#source-map' : false,
   entry: {
     app: [
       path.resolve(projectRoot, './src/main.js')

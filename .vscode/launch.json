@@ -2,20 +2,23 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Chrome",
-      "type": "chrome",
+      "name": "Main Process",
+      "type": "node",
       "request": "launch",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "url": "http://localhost:8080"
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+      "program": "${workspaceRoot}/entry.js"
     },
     {
-      "name": "Attach Chrome",
+      "name": "Renderer Process",
       "type": "chrome",
-      "request": "attach",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "port": 9222
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+      "runtimeArgs": [
+        "${workspaceRoot}/entry.js",
+        "--remote-debugging-port=9222"
+      ],
+      "webRoot": "${workspaceRoot}"
     }
   ]
 }
